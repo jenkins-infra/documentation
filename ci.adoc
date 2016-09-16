@@ -1,0 +1,14 @@
+= Jenkins on Jenkins
+
+This document covers the services available on
+link:https://ci.jenkins.io[ci.jenkins.io]
+and our internal `trusted.ci` instance.
+
+
+=== Node Labels
+
+We use node labels to define capabilities of the nodes in our Jenkins clusters. These are conventional and are to be used
+when referencing nodes, e.g. in the `Jenkinsfile`. 
+
+* `docker` : A Linux (Ubuntu 14.04 LTS) instance with a running Docker daemon
+* `windows` : A "stock" Windows 2012 R2 provisioned on Azure
