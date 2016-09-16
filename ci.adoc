@@ -12,3 +12,12 @@ when referencing nodes, e.g. in the `Jenkinsfile`.
 
 * `docker` : A Linux (Ubuntu 14.04 LTS) instance with a running Docker daemon
 * `windows` : A "stock" Windows 2012 R2 provisioned on Azure
+
+
+=== Tool Installers
+
+We generally prefer to use the Docker Pipeline plugin for system dependencies in the `Jenkinsfile` but it's also possible to use some basic, pre-configured, tool installers.
+
+* `jdk7` A recent JDK7 version
+* `jdk8` A recent JDK8 version
+* `mvn` A recent Maven 3.x version
