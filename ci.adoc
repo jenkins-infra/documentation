@@ -26,3 +26,9 @@ We generally prefer to use the Docker Pipeline plugin for system dependencies in
 * `jdk8` A recent JDK8 version
 * `mvn` A recent Maven 3.x version
 * `groovy` A recent Groovy 2.x version
+
+== Pipeline plugins
+
+* Pipeine
+* CloudBees Docker Pipeline
+* Blue Ocean
