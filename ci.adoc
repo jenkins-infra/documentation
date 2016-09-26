@@ -10,7 +10,7 @@ and our internal `trusted.ci` instance.
 We use node labels to define capabilities of the nodes in our Jenkins clusters. These are conventional and are to be used
 when referencing nodes, e.g. in the `Jenkinsfile`. 
 
-* `linux` : A Linux (Ubuntu 14.04 LTS) instance
+* `linux` : A Linux (Ubuntu 14.04 LTS) instance (alias of `java`)
 * `docker` : A Linux (Ubuntu 14.04 LTS) instance with a running Docker daemon
 * `windows` : A "stock" Windows 2012 R2 provisioned on Azure
 (link:https://azure.microsoft.com/en-us/documentation/articles/cloud-services-sizes-specs/[Standard D3 v2])
