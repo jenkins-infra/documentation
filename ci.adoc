@@ -16,6 +16,7 @@ when referencing nodes, e.g. in the `Jenkinsfile`.
 (link:https://azure.microsoft.com/en-us/documentation/articles/cloud-services-sizes-specs/[Standard D3 v2])
 * `highram` : A Linux (Ubuntu 14.04 LTS) instance with 4vCPU/28GB RAM 
 (link:https://azure.microsoft.com/en-us/documentation/articles/cloud-services-sizes-specs/[Standard A6]). Please avoid unless running ATH or other high-memory capacity instances.
+* `linux` : A Linux (Ubuntu 14.04 LTS) instance that is managed by link:https://github.com/jenkins-infra/jenkins-infra/blob/staging/dist/profile/manifests/buildslave.pp[this Puppet code]
 
 
 === Tool Installers
