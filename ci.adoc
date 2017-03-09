@@ -30,6 +30,6 @@ We generally prefer to use the Docker Pipeline plugin for system dependencies in
 
 == Pipeline plugins
 
-* Pipeine
+* Pipeline
 * CloudBees Docker Pipeline
 * Blue Ocean
