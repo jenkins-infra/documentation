@@ -33,3 +33,31 @@ We generally prefer to use the Docker Pipeline plugin for system dependencies in
 * Pipeline
 * CloudBees Docker Pipeline
 * Blue Ocean
+
+== Caching mirrors
+
+https://repo.jenkins-ci.org/nodejs-dist/ and https://repo.jenkins-ci.org/npm-dist/ mirror https://nodejs.org/dist/ and http://registry.npmjs.org/npm/-/, respectively, so these may be used from link:https://github.com/eirslett/frontend-maven-plugin/blob/master/README.md#installing-node-and-npm[frontend-maven-plugin], as happens automatically in the plugin parent POM as of 2.29. (There is currently no mirror for https://github.com/yarnpkg/yarn/releases/download/, the yarn distribution site.)
+
+There is also a mirror of the npm package repository; to use it:
+
+    npm config set registry https://repo.jenkins-ci.org/api/npm/npm/
+
+or
+
+    yarn config set -- --registry https://repo.jenkins-ci.org/api/npm/npm/
+
+Additionally, https://repo.azure.jenkins.io/ mirrors all non-snapshot downloads from https://repo.jenkins-ci.org/. For example, to use this from Maven, pass `-s settings-azure.xml`:
+
+[source,xml]
+.settings-azure.xml
+----
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <mirrors>
+        <mirror>
+            <id>azure</id>
+            <url>https://repo.azure.jenkins.io/public/</url>
+            <mirrorOf>repo.jenkins-ci.org</mirrorOf>
+        </mirror>
+    </mirrors>
+</settings>
+----
