@@ -14,7 +14,7 @@ when referencing nodes, e.g. in the `Jenkinsfile`.
 * `docker` : A Linux (Ubuntu 14.04 LTS) instance with a running Docker daemon
 * `windows` : A "stock" Windows 2012 R2 provisioned on Azure
 (link:https://azure.microsoft.com/en-us/documentation/articles/cloud-services-sizes-specs/[Standard D3 v2])
-* `highram` : A Linux (Ubuntu 14.04 LTS) instance with 4vCPU/28GB RAM 
+* `highmem` : A Linux (Ubuntu 14.04 LTS) instance with 4vCPU/28GB RAM 
 (link:https://azure.microsoft.com/en-us/documentation/articles/cloud-services-sizes-specs/[Standard A6]). Please avoid unless running ATH or other high-memory capacity instances.
 * `puppet` : A Linux (Ubuntu 14.04 LTS) instance that is managed by link:https://github.com/jenkins-infra/jenkins-infra/blob/staging/dist/profile/manifests/buildslave.pp[this Puppet code]
 
@@ -23,15 +23,16 @@ when referencing nodes, e.g. in the `Jenkinsfile`.
 
 We generally prefer to use the Docker Pipeline plugin for system dependencies in the `Jenkinsfile` but it's also possible to use some basic, pre-configured, tool installers.
 
-* `jdk7` A recent JDK7 version
-* `jdk8` A recent JDK8 version
+* `jdk7` A recent OpenJDK 7 version
+* `jdk8` A recent OpenJDK 8 version
+* `jdk11` A recent OpenJDK 11 version
 * `mvn` A recent Maven 3.x version
 * `groovy` A recent Groovy 2.x version
 
 == Pipeline plugins
 
 * Pipeline
-* CloudBees Docker Pipeline
+* Docker Pipeline
 * Blue Ocean
 
 == Caching mirrors
