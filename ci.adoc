@@ -8,13 +8,13 @@ and our internal `trusted.ci` instance.
 === Node Labels
 
 We use node labels to define capabilities of the nodes in our Jenkins clusters. These are conventional and are to be used
-when referencing nodes, e.g. in the `Jenkinsfile`. 
+when referencing nodes, e.g. in the `Jenkinsfile`.
 
-* `linux` : A Linux (Ubuntu 14.04 LTS) instance (alias of `java`)
-* `docker` : A Linux (Ubuntu 14.04 LTS) instance with a running Docker daemon
+* `linux` : A Linux (Ubuntu 18.04 LTS) instance (alias of `java`)
+* `docker` : A Linux (Ubuntu 18.04 LTS) instance with a running Docker daemon
 * `windows` : A "stock" Windows 2012 R2 provisioned on Azure
 (link:https://azure.microsoft.com/en-us/documentation/articles/cloud-services-sizes-specs/[Standard D3 v2])
-* `highmem` : A Linux (Ubuntu 14.04 LTS) instance with 4vCPU/28GB RAM 
+* `highmem` : A Linux (Ubuntu 18.04 LTS) instance with 4vCPU/28GB RAM
 (link:https://azure.microsoft.com/en-us/documentation/articles/cloud-services-sizes-specs/[Standard A6]). Please avoid unless running ATH or other high-memory capacity instances.
 * `puppet` : A Linux (Ubuntu 14.04 LTS) instance that is managed by link:https://github.com/jenkins-infra/jenkins-infra/blob/staging/dist/profile/manifests/buildslave.pp[this Puppet code]
 
@@ -25,7 +25,7 @@ We generally prefer to use the Docker Pipeline plugin for system dependencies in
 
 * `jdk7` A recent OpenJDK 7 version
 * `jdk8` A recent OpenJDK 8 version
-* `jdk11` A recent OpenJDK 11 version
+* `jdk11` A recent OpenJDK 11 version from link:https://download.java.net/java/ga/jdk11/openjdk-11_linux-x64_bin.tar.gz[java.net]
 * `mvn` A recent Maven 3.x version
 * `groovy` A recent Groovy 2.x version
 
