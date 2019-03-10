@@ -18,6 +18,20 @@ when referencing nodes, e.g. in the `Jenkinsfile`.
 (link:https://azure.microsoft.com/en-us/documentation/articles/cloud-services-sizes-specs/[Standard A6]). Please avoid unless running ATH or other high-memory capacity instances.
 * `puppet` : A Linux (Ubuntu 14.04 LTS) instance that is managed by link:https://github.com/jenkins-infra/jenkins-infra/blob/staging/dist/profile/manifests/buildslave.pp[this Puppet code]
 
+==== Container Agents
+
+We have link:https://azure.microsoft.com/en-us/services/container-instances/[Azure Container Instances] deployed which can
+offer dramatically reduced Pipeline "in-queue" times. Currently these are only available on ci.jenkins.io, and are not yet available on trusted.ci or cert.ci.
+
+The agent images are all built from the link:https://github.com/jenkinsci/jnlp-agents[jnlp-agents] repository.
+
+To use a container agent, specify one of the following labels:
+
+* `maven`: A Maven 3 (Alpine) container with JDK8
+* `maven-11`: A maven 3 (Debian) container with JDK11
+* `node`: A Node (Alpine) container
+* `ruby` :  A Ruby 2 (Debian) container
+* `alpine` : An Alpine-based container with no additional tooling.
 
 === Tool Installers
 
