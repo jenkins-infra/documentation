@@ -27,15 +27,18 @@ The agent images are all built from the link:https://github.com/jenkinsci/jnlp-a
 
 To use a container agent, specify one of the following labels:
 
-* `maven`: A Maven 3 (Debian) container with JDK8
-* `maven-11`: A maven 3 (Debian) container with JDK11
+* `maven`: A Maven 3 (Debian) container with JDK 8
+* `maven-11`: A maven 3 (Debian) container with JDK 11
+* `maven-windows`: A Windows container with JDK 8
+* `maven-11-windows`: A Windows container with JDK 11
 * `node`: A Node (Alpine) container
 * `ruby` :  A Ruby 2 (Debian) container
 * `alpine` : An Alpine-based container with no additional tooling.
 
 === Tool Installers
 
-We generally prefer to use the Docker Pipeline plugin for system dependencies in the `Jenkinsfile` but it's also possible to use some basic, pre-configured, tool installers.
+We generally prefer to use the Docker Pipeline plugin or ACI agents for system dependencies in the `Jenkinsfile`
+but it is also possible to use some basic, preconfigured tool installers.
 
 * `jdk7` A recent OpenJDK 7 version
 * `jdk8` A recent OpenJDK 8 version
