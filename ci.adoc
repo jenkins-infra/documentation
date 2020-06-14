@@ -18,6 +18,13 @@ when referencing nodes, e.g. in the `Jenkinsfile`.
 * `windock` : A Windows 2019 provisioned on Azure or AWS that is able to run Windows Docker images
 * `puppet` : A Linux (Ubuntu 14.04 LTS) instance that is managed by link:https://github.com/jenkins-infra/jenkins-infra/blob/staging/dist/profile/manifests/buildslave.pp[this Puppet code]
 
+==== Node Labels - Processors
+
+* `amd64` : An agent running an AMD or Intel 64 bit processor
+* `arm64` : An agent running an ARM 64 bit processor on AWS (Amazon Graviton)
+* `ppc64le` : An agent running an IBM PowerPC 64 bit processor
+* `s390x` : An agent running an IBM System 390x (Z series) processor
+
 ==== Container Agents
 
 We have link:https://azure.microsoft.com/en-us/services/container-instances/[Azure Container Instances] deployed which can
