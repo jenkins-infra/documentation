@@ -6,8 +6,8 @@ This document is a non exhaustive list of them.
 
 === jenkins-release-bot
 
-owner: link:https://github.com/olblak(Olblak)
-link:https://github.com/jenkins-release-bot(Profile)
+profile: link:https://github.com/jenkins-release-bot[Profile]
+owner: link:https://github.com/olblak[Olblak]
 
 This bot is used to automate any tasks related to releases that need Github integration
 
@@ -19,8 +19,8 @@ Ex:
 
 === jenkins-infra-bot
 
-owner: link:https://github.com/olblak(Olblak)
-link:https://github.com/jenkins-infra-bot(Profile)
+profile: https://github.com/jenkins-infra-bot[Profile]
+owner: https://github.com/olblak[Olblak]
 
 This bot is used to for various infrastructure task that required Github integration
 ex:
@@ -30,8 +30,8 @@ ex:
 
 This bots is the first github bot used in the Jenkins Infrastructure
 
-owner: link:https://github.com/kohsuke(Kohsuke)
-link: https://github.com/jenkinsadmin/(jenkinsadmin)
+profile: https://github.com/jenkinsadmin/[jenkinsadmin]
+owner: https://github.com/kohsuke[Kohsuke]
 
 exemple:
 * Automatically open pull request
