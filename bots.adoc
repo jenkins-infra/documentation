@@ -6,12 +6,19 @@ This document is a non exhaustive list of them.
 
 === jenkins-release-bot
 
-profile: link:https://github.com/jenkins-release-bot[Profile]
-owner: link:https://github.com/olblak[Olblak]
+[%header,cols=2*]
+|===
+| profile
+| owner
+
+| link:https://github.com/jenkins-release-bot[jenkins-release-bot]
+| link:https://github.com/olblak[Olblak]
+|===
 
 This bot is used to automate any tasks related to releases that need Github integration
 
 Ex:
+
 * Release jenkinsci/jenkins
 * Release jenkinsci/remoting
 * Used from release.ci.jenkins.io
@@ -19,21 +26,37 @@ Ex:
 
 === jenkins-infra-bot
 
-profile: https://github.com/jenkins-infra-bot[Profile]
-owner: https://github.com/olblak[Olblak]
+[%header,cols=2*]
+|===
+| profile
+| owner
+
+| https://github.com/jenkins-infra-bot[jenkins-infra-bot]
+| https://github.com/olblak[Olblak]
+|===
+
 
 This bot is used to for various infrastructure task that required Github integration
 ex:
-- pluginsite configuration
+
+* pluginsite configuration
 
 === jenkinsadmin
 
+[%header,cols=2*]
+|===
+| profile
+| owner
+
+| https://github.com/jenkinsadmin/[jenkinsadmin]
+| https://github.com/kohsuke[Kohsuke]
+|===
+
+
 This bots is the first github bot used in the Jenkins Infrastructure
 
-profile: https://github.com/jenkinsadmin/[jenkinsadmin]
-owner: https://github.com/kohsuke[Kohsuke]
+ex:
 
-exemple:
 * Automatically open pull request
 * jenkinsadmin irc bot
 
