@@ -1,4 +1,5 @@
 = Jenkins Bots
+
 The Jenkins project uses multiple bots account for various needs.
 This document is a non exhaustive list of them.
 
@@ -11,7 +12,7 @@ This document is a non exhaustive list of them.
 | profile
 | owner
 
-| link:https://github.com/jenkins-release-bot[jenkins-release-bot]
+| link:https://github.com/jenkins-release-bot[Jenkins-release-bot]
 | link:https://github.com/olblak[Olblak]
 |===
 
@@ -31,7 +32,7 @@ Ex:
 | profile
 | owner
 
-| https://github.com/jenkins-infra-bot[jenkins-infra-bot]
+| https://github.com/jenkins-infra-bot[Jenkins-infra-bot]
 | https://github.com/olblak[Olblak]
 |===
 
@@ -48,7 +49,7 @@ ex:
 | profile
 | owner
 
-| https://github.com/jenkinsadmin/[jenkinsadmin]
+| https://github.com/jenkinsadmin/[Jenkinsadmin]
 | https://github.com/kohsuke[Kohsuke]
 |===
 
