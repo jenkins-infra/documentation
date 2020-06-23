@@ -1,0 +1,64 @@
+= Jenkins Bots
+
+The Jenkins project uses multiple bots account for various needs.
+This document is a non exhaustive list of them.
+
+== Github
+
+=== jenkins-release-bot
+
+[%header,cols=2*]
+|===
+| profile
+| owner
+
+| link:https://github.com/jenkins-release-bot[Jenkins-release-bot]
+| link:https://github.com/olblak[Olblak]
+|===
+
+This bot is used to automate any tasks related to releases that need Github integration
+
+Ex:
+
+* Release jenkinsci/jenkins
+* Release jenkinsci/remoting
+* Used from release.ci.jenkins.io
+
+
+=== jenkins-infra-bot
+
+[%header,cols=2*]
+|===
+| profile
+| owner
+
+| https://github.com/jenkins-infra-bot[Jenkins-infra-bot]
+| https://github.com/olblak[Olblak]
+|===
+
+
+This bot is used to for various infrastructure task that required Github integration
+ex:
+
+* pluginsite configuration
+
+=== jenkinsadmin
+
+[%header,cols=2*]
+|===
+| profile
+| owner
+
+| https://github.com/jenkinsadmin/[Jenkinsadmin]
+| https://github.com/kohsuke[Kohsuke]
+|===
+
+
+This bots is the first github bot used in the Jenkins Infrastructure
+
+ex:
+
+* Automatically open pull request
+* jenkinsadmin irc bot
+
+Remark: We don't have access to this bot anymore and we need Kohsuke to transfer the ownership
