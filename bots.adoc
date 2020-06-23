@@ -61,4 +61,4 @@ ex:
 * Automatically open pull request
 * jenkinsadmin irc bot
 
-Remark: We don't have access to this bot anynmore and we need Kohsuke to transfer the ownership
+Remark: We don't have access to this bot anymore and we need Kohsuke to transfer the ownership
