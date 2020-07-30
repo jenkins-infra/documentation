@@ -54,7 +54,7 @@ ex:
 |===
 
 
-This bots is the first github bot used in the Jenkins Infrastructure.
+This bot is the first GitHub bot used in the Jenkins Infrastructure.
 
 ex:
 
@@ -65,4 +65,4 @@ ex:
 Remark: We don't have access to this bot anymore and we need Kohsuke to transfer the ownership
 
 Remark: Before July 30th, 2020 the bot was also used in GitHub org Folder organizations on ci.jenkins.io.
-At the moment it is replaced by link:/github-apps.adoc#cijenkinsio[ci.jenkins.io GitHub App].
+It is replaced by link:/github-apps.adoc#cijenkinsio[ci.jenkins.io GitHub App].
