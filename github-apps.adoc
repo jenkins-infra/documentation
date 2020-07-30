@@ -1,14 +1,56 @@
 = GitHub Apps
 
+We have been using the GitHub Apps in our infrastructure from July 30, 2020.
+These apps help us to provide higher rate API limits on the infrastructure,
+and to get access to GitHub Checks and Deployment APIs.
 
 == ci.jenkins.io
 
-https://github.com/apps/ci-jenkins-io
+[%header,cols=2*]
+|===
+| App URL
+| owner
 
-TODO: docs
+| link:https://github.com/apps/ci-jenkins-io[ci-jenkins-io]
+| link:https://github.com/jenkinsci[jenkinsci]
+|===
 
-== plugin-site
+This app is used to report build statuses on link:https://ci.jenkins.io/[ci.jenkins.io].
+It is used in Multi-Branch Pipeline GitHub org folders, including plugins, Jenkins core repositories, infrastructure, etc.
 
-https://github.com/apps/jenkins-plugin-site
+Permissions:
 
-TODO: docs
+* The app requires write access to GitHub pull requests, checks and deployments.
+  More permissions may be added later when we expand GitHub integrations on ci.jenkins.io.
+  See link:https://github.com/organizations/jenkinsci/settings/apps/ci-jenkins-io/permissions[this page] for a full list of permissions
+  (needs admin access to the `jenkinsci` GitHub org).
+* The app has access to the following GitHUb organizations:
+** `jenkinsci`- all repositories
+** `jenkins-infra` - a limited number of repositories which are built on ci.jenkins.io (link:https://ci.jenkins.io/job/Infra/[Infra directory])
+** `stapler` - all repositories
+* More organizations and permissions might be added upon request in the Jenkins infrastructure channels.
+
+NOTE: Not all functionality on ci.jenkins.io uses this GitHub app at the moment.
+There are Pipeline steps (e.g. Incrementals deployment) which use plugins not yet integrated with the GitHub App authentication support.
+Such functionality keeps using the link:/bots.adoc#jenkinsadmin[@jenkinsadmin] GitHub bot.
+
+== Plugin Site App
+
+[%header,cols=2*]
+|===
+| App URL
+| owner
+
+| link:https://github.com/apps/jenkins-plugin-site[jenkins-plugin-site]
+| link:https://github.com/jenkinsci[jenkinsci]
+|===
+
+This app is used by the [Jenkins Plugin Site](http://plugins.jenkins.io/) which needs access to GitHub in order to generate documentation and to display dynamic content like changelogs and GitHub issues.
+See link:https://github.com/jenkins-infra/plugin-site-api/[jenkins-infra/plugin-site-api/] and link:https://github.com/jenkins-infra/plugin-site/[jenkins-infra/plugin-site/] for usages.
+
+Permissions:
+
+* This app requires read-only access to the repository code, contents (releases, etc.) and metadata
+* This app is installed for all repositories in the `jenkinsci` GitHub organizations
+* At the moment we do not serve GitHub-based documentation for plugins hosted in other GitHub organizations,
+  so plugin maintainers cannot enable this app elsewhere.
