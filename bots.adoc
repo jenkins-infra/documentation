@@ -43,7 +43,7 @@ It is also used for integration GitHub org management.
 ex:
 
 * pluginsite configuration
-* jenkinsadmin [IRC bot](https://www.jenkins.io/projects/infrastructure/ircbot/)
+* jenkinsadmin link:https://www.jenkins.io/projects/infrastructure/ircbot/[IRC bot]
 
 === jenkinsadmin
 
