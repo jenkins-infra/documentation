@@ -37,10 +37,13 @@ Ex:
 |===
 
 
-This bot is used to for various infrastructure task that required Github integration
+This bot is used to for various infrastructure task that required Github integration.
+It is also used for integration GitHub org management.
+
 ex:
 
 * pluginsite configuration
+* jenkinsadmin [IRC bot](https://www.jenkins.io/projects/infrastructure/ircbot/)
 
 === jenkinsadmin
 
@@ -59,7 +62,6 @@ This bot is the first GitHub bot used in the Jenkins Infrastructure.
 ex:
 
 * Automatically open pull request
-* jenkinsadmin irc bot
 * Some Pipeline steps and operations on ci.jenkins.io
 
 Remark: We don't have access to this bot anymore and we need Kohsuke to transfer the ownership
