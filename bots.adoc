@@ -1,0 +1,70 @@
+= Jenkins Bots
+
+The Jenkins project uses multiple bots account for various needs.
+This document is a non exhaustive list of them.
+
+== Github
+
+=== jenkins-release-bot
+
+[%header,cols=2*]
+|===
+| profile
+| owner
+
+| link:https://github.com/jenkins-release-bot[Jenkins-release-bot]
+| link:https://github.com/olblak[Olblak]
+|===
+
+This bot is used to automate any tasks related to releases that need Github integration
+
+Ex:
+
+* Release jenkinsci/jenkins
+* Release jenkinsci/remoting
+* Used from release.ci.jenkins.io
+
+
+=== jenkins-infra-bot
+
+[%header,cols=2*]
+|===
+| profile
+| owner
+
+| https://github.com/jenkins-infra-bot[Jenkins-infra-bot]
+| https://github.com/olblak[Olblak]
+|===
+
+
+This bot is used to for various infrastructure task that required Github integration.
+It is also used for integration GitHub org management.
+
+ex:
+
+* pluginsite configuration
+* jenkinsadmin link:https://www.jenkins.io/projects/infrastructure/ircbot/[IRC bot]
+
+=== jenkinsadmin
+
+[%header,cols=2*]
+|===
+| profile
+| owner
+
+| https://github.com/jenkinsadmin/[Jenkinsadmin]
+| https://github.com/kohsuke[Kohsuke]
+|===
+
+
+This bot is the first GitHub bot used in the Jenkins Infrastructure.
+
+ex:
+
+* Automatically open pull request
+* Some Pipeline steps and operations on ci.jenkins.io
+
+Remark: We don't have access to this bot anymore and we need Kohsuke to transfer the ownership
+
+Remark: Before July 30th, 2020 the bot was also used in GitHub org Folder organizations on ci.jenkins.io.
+It is replaced by link:/github-apps.adoc#cijenkinsio[ci.jenkins.io GitHub App].

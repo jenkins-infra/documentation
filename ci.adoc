@@ -12,11 +12,18 @@ when referencing nodes, e.g. in the `Jenkinsfile`.
 
 * `linux` : A Linux (Ubuntu 18.04 LTS) instance (alias of `java`)
 * `docker` : A Linux (Ubuntu 18.04 LTS) instance with a running Docker daemon
-* `windows` : A "stock" Windows 2012 R2 provisioned on Azure
-(link:https://azure.microsoft.com/en-us/documentation/articles/cloud-services-sizes-specs/[Standard D3 v2])
+* `windows` : A Windows 2019 provisioned on Azure or AWS
 * `highmem` : A Linux (Ubuntu 18.04 LTS) instance with 4vCPU/28GB RAM
 (link:https://azure.microsoft.com/en-us/documentation/articles/cloud-services-sizes-specs/[Standard A6]). Please avoid unless running ATH or other high-memory capacity instances.
+* `windock` : A Windows 2019 provisioned on Azure or AWS that is able to run Windows Docker images
 * `puppet` : A Linux (Ubuntu 14.04 LTS) instance that is managed by link:https://github.com/jenkins-infra/jenkins-infra/blob/staging/dist/profile/manifests/buildslave.pp[this Puppet code]
+
+==== Node Labels - Processors
+
+* `amd64` : An agent running an AMD or Intel 64 bit processor
+* `arm64` : An agent running an ARM 64 bit processor on AWS (Amazon Graviton)
+* `ppc64le` : An agent running an IBM PowerPC 64 bit processor
+* `s390x` : An agent running an IBM System 390x (Z series) processor
 
 ==== Container Agents
 
@@ -26,7 +33,7 @@ offer dramatically reduced Pipeline "in-queue" times. Currently these are only a
 The agent images are all built from the link:https://github.com/jenkinsci/jnlp-agents[jnlp-agents] repository.
 
 To use a container agent, specify one of the following labels:
-
+oleg-nenashevoleg-nenashev
 * `maven`: A Maven 3 (Debian) container with JDK 8
 * `maven-11`: A maven 3 (Debian) container with JDK 11
 * `maven-windows`: A Windows container with JDK 8
