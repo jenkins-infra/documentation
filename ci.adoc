@@ -33,7 +33,7 @@ offer dramatically reduced Pipeline "in-queue" times. Currently these are only a
 The agent images are all built from the link:https://github.com/jenkinsci/jnlp-agents[jnlp-agents] repository.
 
 To use a container agent, specify one of the following labels:
-oleg-nenashevoleg-nenashev
+
 * `maven`: A Maven 3 (Debian) container with JDK 8
 * `maven-11`: A maven 3 (Debian) container with JDK 11
 * `maven-windows`: A Windows container with JDK 8
