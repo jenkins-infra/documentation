@@ -1,3 +1,4 @@
+[![hackmd-github-sync-badge](https://hackmd.io/EDpvZx9ZS2GWgHHqWFRDfQ/badge)](https://hackmd.io/EDpvZx9ZS2GWgHHqWFRDfQ)
 **Public Document**
 
 # Jenkins Kubernetes Upgrade
