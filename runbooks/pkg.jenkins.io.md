@@ -5,6 +5,8 @@ project: infrastructure
 
 # Runbook: Distribution's Packaging Service
 
+[![hackmd-github-sync-badge](https://hackmd.io/UjmXampzQtSJT_OLHbJaMA/badge)](https://hackmd.io/UjmXampzQtSJT_OLHbJaMA)
+
 ## Description
 
 pkg.jenkins.io -> package repositories indexes serves through a Fastly CDN
