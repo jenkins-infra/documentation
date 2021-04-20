@@ -5,6 +5,9 @@ project: infrastructure
 
 # Runbook: Fallback File Download Service (fallback.get.jenkins.io)
 
+[![hackmd-github-sync-badge](https://hackmd.io/zlWHHKzQS7KvxE0qA6TTtA/badge)](https://hackmd.io/zlWHHKzQS7KvxE0qA6TTtA)
+
+
 ## Description
 
 fallback.get.jenkins.io is file download service for the Jenkins projects.
