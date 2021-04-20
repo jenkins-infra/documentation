@@ -5,7 +5,10 @@ project: infrastructure
 
 # Runbook: Distribution's Packaging Service
 
-[![hackmd-github-sync-badge](https://hackmd.io/UjmXampzQtSJT_OLHbJaMA/badge)](https://hackmd.io/UjmXampzQtSJT_OLHbJaMA)
+[![hackmd-github-sync-badge](https://hackmd.io/iEoFyySHRwyeok76afwczA/badge)](https://hackmd.io/iEoFyySHRwyeok76afwczA)
+
+
+
 
 ## Description
 
