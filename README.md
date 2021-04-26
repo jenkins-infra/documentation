@@ -13,7 +13,7 @@ In the cased of "synchronous" communication, use [hackmd.io](https://hackmd.io/t
 Feel free to request access, our goals is only to avoid spammers.
 
 In the case of "asynchronous" communication, open a [GitHub Pull Request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) to ask for a review
-to contributors to provide feedback, and it integrates better with Github notifications.
+from maintainers to provide feedback, share knowledge and benefit from the Github notifications system.
 
 They are cases where documentation lies somewhere else like the private repository [jenkins-infra/runbook](github.com/jenkins-infra/runbooks), in those cases, it's better to provide a link from this repository, referencing thirds document elsewhere. The purpose is to use jenkins-infra/documentation as the central source of knowledge but to keep the ability to have information where it belongs.
 
