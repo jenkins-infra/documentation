@@ -7,7 +7,7 @@ It gathers information for the following areas:
 * "Meeting" section contains meeting notes
 * "Service" section contains service descriptions
 
-The way contributors can collaborate in this repository depends on either we want "synchronized" or "asynchronized" communication.
+The contribution workflow depends on either you want a "synchronous" or "asynchronous" communication.
 
 In the cased of "synchronous" communication, use [hackmd.io](https://hackmd.io/team/jenkins-infra) with documents linked in the `jenkins-infra` channel. Once the collaboration is done, a maintainer needs to push the document into this repository.
 Feel free to request access, our goals is only to avoid spammers.
