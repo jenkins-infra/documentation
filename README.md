@@ -15,7 +15,7 @@ Feel free to request access, our goals is only to avoid spammers.
 In the case of "asynchronized" communication, it's better to use the git trunk-based development as it gives more time
 to contributors to provide feedback, and it integrates better with Github notifications.
 
-They are cases where documentation lies somewhere else like the private repository [jenkins-infra/runbook](github.com/jenkins-infra/runbooks), in those cases, it's better to provide a link from this repository, referencing thirds document elsewhere. The purpose is to use jenkins-infra/documentation as the central source of knowledge.
+They are cases where documentation lies somewhere else like the private repository [jenkins-infra/runbook](github.com/jenkins-infra/runbooks), in those cases, it's better to provide a link from this repository, referencing thirds document elsewhere. The purpose is to use jenkins-infra/documentation as the central source of knowledge but to keep the ability to have information where it belongs
 
 ## Contributing
 
