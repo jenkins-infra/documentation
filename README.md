@@ -5,7 +5,7 @@ It gathers information for the following areas:
 
 * "Maintenance" section contains document used to prepare service maintenance like systems upgrade.
 * "Meeting" section contains meeting notes
-* "Service" section contains service description
+* "Service" section contains service descriptions
 
 The way contributors can collaborate in this repository depends on either we want "synchronized" or "asynchronized" communication.
 
