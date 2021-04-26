@@ -6,10 +6,7 @@
 
 This document contains information about how to upgrade Kubernetes cluster maintained by the Jenkins infrastructure project.
 
-## Template
-This is the default list of requirements that we should consider before every Cluster upgrade. Feel free to add any suggestions you may have.
-
-### Requirements
+## Requirements
 
 - Create [Jira](https://issues.jenkins.io) Ticket 
 - Announce on:
