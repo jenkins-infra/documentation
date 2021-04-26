@@ -9,7 +9,7 @@ It gathers information for the following areas:
 
 The way contributors can collaborate in this repository depends on either we want "synchronized" or "asynchronized" communication.
 
-In the cased of "synchronized" communication, it's better to use [hackmd.io](https://hackmd.io/team/jenkins-infra) with documents linked in the jenkins-infra channel. Once the collaboration is done, someone needs to push the document into this repository.
+In the cased of "synchronous" communication, use [hackmd.io](https://hackmd.io/team/jenkins-infra) with documents linked in the `jenkins-infra` channel. Once the collaboration is done, a maintainer needs to push the document into this repository.
 Feel free to request access, our goals is only to avoid spammers.
 
 In the case of "asynchronized" communication, it's better to use the git trunk-based development as it gives more time
