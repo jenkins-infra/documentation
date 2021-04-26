@@ -1,4 +1,4 @@
-a Meetings
+# Meetings
 
 EverJenkins infrastructure contributors gather on a video call to share progress, discuss ongoing issues, or communicate about coming work.
 Everybody is invited to participate, we want to take this opportunity to have an interactive discussion or just bring awareness to specific topic.
