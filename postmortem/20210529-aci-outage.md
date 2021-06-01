@@ -7,6 +7,7 @@ project: infrastructure
 
 # 2021-05-29 - Azure Container Instance outage on ci.jenkins.io
 
+
 ## Timeline - May 29, 2021
 
 * 16:37 Denver - Mark Waite updated plugins on ci.jenkins.io, restarted ci.jenkins.io
@@ -14,6 +15,7 @@ project: infrastructure
 * 17:15 Denver - Confirmed builds with JDK 8u292 tools working on amd64, arm64, s390x, and popc64le
 * 17:39 Denver - Started Jenkins core build, detected that maven and maven-11 agents were not being allocated
 * 17:41 Denver - System log for ACI agents reports `Cannot provision: template for label maven is not available now, because it failed to provision last time.`
+*  
 * 17:50 Denver - Downgraded Azure container plugin to previously installed version, restarted Jenkins
 * 18:00 Denver - Downgraded plugin reports `NoSuchMethodError`, likely indicator that it requires an API in one of the 50+ plugins that were upgraded at 16:37 Denver time
 * 18:01 Denver - Updated Azure container plugin to latest release
