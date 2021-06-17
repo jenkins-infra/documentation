@@ -4,7 +4,7 @@ state: open
 project: infrastructure
 ---
 
-# 2021-07-03 - repo.jenkins-ci.org authentication issue
+# 2021-06-03 - repo.jenkins-ci.org authentication issue
 
 **! This document is open to feedback until the 15th of June 2021 then this document will be archived on [jenkins-infra/documentation](https://github.com/jenkins-infra/documentation) !**
 
