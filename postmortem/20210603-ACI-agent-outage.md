@@ -63,13 +63,13 @@ project: infrastructure
 
 ### Short term
 
-* Remove the plugin [Azure Commons](https://plugins.jenkins.io/azure-commons/) as proposed by @zvW_c6ROSOOuJDTOracA7Q
+* Remove the plugin [Azure Commons](https://plugins.jenkins.io/azure-commons/) as proposed by @zvW_c6ROSOOuJDTOracA7Q [INFRA-3010](https://issues.jenkins.io/browse/INFRA-3010)
 
 ### Medium-term
 
-* Mixes the agent container workload to not depends only on ACI (Kubernetes agent could be used)
+* Mixes the agent container workload to not depends only on ACI (Kubernetes agent could be used) [INFRA-2918](https://issues.jenkins.io/browse/INFRA-2918)
 
 ### Long-term
 
-* Add a pager duty alert when 80% of the 800 deployment ACI threshold is reached
-* Add a sanity check that compares config file versions and installed plugin versions?  Alternately, don't upgrade plugins without a configuration backup and don't downgrade plugins without comparing current configuration files with backup configuration files?
+* Add a pager duty alert when 80% of the 800 deployment ACI threshold is reached - [INFRA-3011](https://issues.jenkins.io/browse/INFRA-3011)
+* Add a sanity check that compares config file versions and installed plugin versions?  Alternately, don't upgrade plugins without a configuration backup and don't downgrade plugins without comparing current configuration files with backup configuration files? [Sounds like a mandatory point for ci.jenkins.io as code](https://issues.jenkins.io/browse/INFRA-2917)
