@@ -84,8 +84,8 @@ Related to `publicks8` cluster
       - High Memory Node Pool :heavy_check_mark:
       - Standard Node Pool :warning: (see notes below)
     - Close maintenance windows in status (<https://github.com/jenkins-infra/status/pull/39>) :heavy_check_mark:
-    - Send closing email to mailing TODO
-    - Send closing message in IRC TODO
+    - Send closing email to mailing :heavy_check_mark:
+    - Send closing message in IRC :heavy_check_mark:
     - Write post mortem for what went wrong :heavy_check_mark:
 
 ### Notes
