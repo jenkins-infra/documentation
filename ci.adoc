@@ -27,7 +27,7 @@ when referencing nodes, e.g. in the `Jenkinsfile`.
 
 ==== Container Agents
 
-We use link:https://plugins.jenkins.io/kubernetes/[Kubernetes Agents] with a set of different kubernetes clusters to execute container agent-based.
+We use link:https://plugins.jenkins.io/kubernetes/[Kubernetes Agents] with a set of different kubernetes clusters to execute container based agents.
 Currently it is only available on ci.jenkins.io, and not yet on trusted.ci or cert.ci.
 
 The agent images are all built from the link:https://github.com/jenkins-infra/docker-inbound-agents[jenkins-infra/docker-inbound-agents] repository.
