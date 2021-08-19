@@ -27,10 +27,10 @@ when referencing nodes, e.g. in the `Jenkinsfile`.
 
 ==== Container Agents
 
-We have link:https://azure.microsoft.com/en-us/services/container-instances/[Azure Container Instances] deployed which can
-offer dramatically reduced Pipeline "in-queue" times. Currently these are only available on ci.jenkins.io, and are not yet available on trusted.ci or cert.ci.
+We use link:https://plugins.jenkins.io/kubernetes/[Kubernetes Agents] with a set of different kubernetes clusters to execute container based agents.
+Currently it is only available on ci.jenkins.io, and not yet on trusted.ci or cert.ci.
 
-The agent images are all built from the link:https://github.com/jenkinsci/jnlp-agents[jnlp-agents] repository.
+The agent images are all built from the link:https://github.com/jenkins-infra/docker-inbound-agents[jenkins-infra/docker-inbound-agents] repository.
 
 To use a container agent, specify one of the following labels:
 
@@ -41,6 +41,9 @@ To use a container agent, specify one of the following labels:
 * `node`: A Node (Alpine) container
 * `ruby` :  A Ruby 2 (Debian) container
 * `alpine` : An Alpine-based container with no additional tooling.
+
+Please note that it is not recommended to use the pipeline instructions specific to Kubernetes (such as `podTemplate()` or `agent { kubernetes {}}}` unless you really need it (e.g. if the default set of container agent templates does not fit your needs).
+The reason is related to the ability of quickly moving the workload to another kind of agents (either VMs, Azure Containers, etc.).
 
 === Tool Installers
 
