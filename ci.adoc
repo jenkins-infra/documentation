@@ -10,9 +10,9 @@ and our internal `trusted.ci` instance.
 We use node labels to define capabilities of the nodes in our Jenkins clusters. These are conventional and are to be used
 when referencing nodes, e.g. in the `Jenkinsfile`.
 
-* `linux` : A Linux (Ubuntu 20.04 LTS) instance with 4~8vCPU/16GB RAM (alias of `java`) (link:https://azure.microsoft.com/en-us/documentation/articles/cloud-services-sizes-specs/[Standard_D4s_v3] on Azure or link:https://aws.amazon.com/en/ec2/instance-types/[T3Xlarge] on AWS)
-* `docker` : A Linux (Ubuntu 20.04 LTS) instance with 4~8vCPU/16GB RAM and a running Docker daemon
-(link:https://azure.microsoft.com/en-us/documentation/articles/cloud-services-sizes-specs/[Standard_D4s_v3] on Azure or link:https://aws.amazon.com/en/ec2/instance-types/[T3Xlarge] on AWS)
+* `linux` \ `docker` (alias of `java`): A Linux (Ubuntu 20.04 LTS) instance with Docker Engine Community Edition
+** On AWS (label `aws`): https://github.com/jenkins-infra/jenkins-infra/blob/production/hieradata/clients/azure.ci.jenkins.io.yaml#L121[]
+** On Azure: https://github.com/jenkins-infra/jenkins-infra/blob/production/hieradata/clients/azure.ci.jenkins.io.yaml#L172[] 
 * `windows` : A Windows 2019 instance with 4~8vCPU/16GB RAM provisioned (link:https://azure.microsoft.com/en-us/documentation/articles/cloud-services-sizes-specs/[Standard_D4s_v3] on Azure or link:https://aws.amazon.com/en/ec2/instance-types/[T3Xlarge] on AWS)
 * `highmem` : A Linux (Ubuntu 20.04 LTS) instance with 16vCPU/64GB RAM
 (link:https://azure.microsoft.com/en-us/documentation/articles/cloud-services-sizes-specs/[Standard_D16s_v3] on Azure or link:https://aws.amazon.com/en/ec2/instance-types/[M54xlarge] on AWS). Please avoid unless running ATH or other high-memory capacity instances.
