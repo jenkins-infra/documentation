@@ -13,27 +13,25 @@ tags: maintenance
 Related to `publicks8` and `cik8s` cluster
 
 - [ ] JIRA issue: <https://issues.jenkins.io/browse/INFRA-3118>
-    - [ ] [upgrade AKS](https://issues.jenkins.io/projects/INFRA/issues/INFRA-3119)
-    - [ ] [upgrade EKS](https://issues.jenkins.io/projects/INFRA/issues/INFRA-3121)
-    - [ ] [upgrade kubectl](https://issues.jenkins.io/projects/INFRA/issues/INFRA-3119)
+  - [ ] [upgrade AKS](https://issues.jenkins.io/projects/INFRA/issues/INFRA-3119)
+  - [ ] [upgrade EKS](https://issues.jenkins.io/projects/INFRA/issues/INFRA-3121)
+  - [ ] [upgrade kubectl](https://issues.jenkins.io/projects/INFRA/issues/INFRA-3119)
 
 - [ ] Announces:
   - [ ] `status.jenkins.io`: <https://github.com/jenkins-infra/status/pull/...>
-  - [ ] Mailing list: 
+  - [ ] Mailing list
   - [ ] IRC
 
 - [ ] Changelog Scrapping:
   - [ ] [Main changes](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.20.md#whats-new-major-themes)
   - [ ] [Urgent Upgrade Notes for 1.20](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.20.md#urgent-upgrade-notes)
 
-  
   - Azure:
     - If the upgrade fails, [the support of 1.19 in AKS](https://github.com/Azure/AKS/blob/master/CHANGELOG.md#announcement) is available until January 2022.
-    
 
   - AWS
-      - <https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html>
-     
+    - <https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html>
+
   - [ ] Docker Helmfile Upgrade (kubectl): <https://github.com/jenkins-infra/docker-helmfile/pull/...>
   
   - [x] Checking for deprecated APIs on Kube resources/helmfiles
@@ -61,4 +59,3 @@ Related to `publicks8` and `cik8s` cluster
     - [ ] Write post mortem for what went wrong (if needed)
 
 ### Notes
-
