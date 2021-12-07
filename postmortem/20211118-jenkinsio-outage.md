@@ -52,11 +52,13 @@ project: infrastructure
 
 ### Medium-term
 
-* Improve monitoring to ensure that an outage on origin.jenkins.io detects such an issue
-  * Is there a monitoring for this domain?
+* Improve monitoring to ensure that an outage on www.origin.jenkins.io detects such an issue
+  * Q: Is there a monitoring for this domain?
+      * A: We don't: https://github.com/jenkins-infra/datadog/search?q=origin.jenkins.io only mentions "pkg.origin". Great point: we could make it faster to detect outages on this by adding a custom datadog monitoring. 
   * Ensure that this monitoring must present an header "Host" set to "www.jenkins.io" to NOT be redirected to jenkins.io (e.g. to Fastly)
   * Add a set of pages to be checked, not only the front page (such as pipeline steps page)
 
 ### Long-term
 
-* N.A.
+* Q: Would a prototype of pkg.origin.jenkins.io have allowed us to detect this issue before a production deployment?
+    * A: (Assuming you meant "a prototype of www.origin.jenkins.io") if we had a complete staging cluster with the same DNS setup, then yes. Maybe we could have a "k3s" ephemeral end to end testing before deploying to production though. That's a nice improvement to think about for the next quarter!
