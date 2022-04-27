@@ -39,21 +39,19 @@ Related to `prodpublicks8` and `temp-privatek8s` clusters
   ```
 
   - Upgrade Procedure:
-    - [ ] Ensure we have access to all clusters in kube-config
-    - [ ] Docker Helmfile Upgrade (kubectl)
-    - [ ] Merging last PRs on charts or putting it as on-hold
-    - [ ] Pagerduty: Notify the on call person
-    - [ ] Stopping the k8s management job
-    - [ ] Starting the upgrade in Azure (temp-prodk8s)
-    - [ ] Starting the upgrade in Azure (prodpublick8s)
-      - [ ] Control Plane
-      - [ ] Windows Node Pool
-      - [ ] High Memory Node Pool
-      - [ ] Standard Node Pool
-    - [ ] Close maintenance windows in status (<https://github.com/jenkins-infra/status/pull/...>)
-    - [ ] Send closing email to mailing
-    - [ ] Send closing message in IRC
-    - [ ] Write post mortem for what went wrong (if needed)
+    - [x] Ensure we have access to all clusters in kube-config
+    - [x] Docker Helmfile Upgrade (kubectl)
+    - [x] Merging last PRs on charts or putting it as on-hold
+    - [x] Pagerduty: Notify the on call person
+    - [x] Stopping the k8s management job
+    - [x] Starting the upgrade in Azure (temp-prodk8s)
+    - [x] Starting the upgrade in Azure (prodpublick8s)
+      - [x] Control Plane
+      - [x] Windows Node Pool
+      - [x] High Memory Node Pool
+      - [x] Standard Node Pool
+    - [x] Close maintenance windows in status (<https://github.com/jenkins-infra/status/pull/...>)
+    - [x] Write post mortem for what went wrong (if needed)
 
   - [x] Expected downtimes: none
 
