@@ -151,7 +151,7 @@ Related to `prodpublicks8` and `temp-privatek8s` clusters
 
         - [x] Expected downtimes: none
 
-      ### BUG NOTE AFTER UPGRADE
+### Issues Met during This Upgrade
         
         ERROR : we have to specify the namespace where the SAS token lives, otherwises Kubernetes searches on the default namespace.
         
