@@ -147,7 +147,7 @@ Related to `prodpublicks8` and `temp-privatek8s` clusters
 ```
          
          
-  We did hit a problem with PVC and PV as the **new** parameter "secretNamespace" was not provided by our helm definition the secrets were not in the correct Namespace.
+      We did hit a problem with PVC and PV as the **new** parameter "secretNamespace" was not provided by our helm definition the secrets were not in the correct Namespace.
          Here is the PR that added it: https://github.com/jenkins-infra/helm-charts/pull/158
          
          
