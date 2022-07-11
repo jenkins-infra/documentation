@@ -153,7 +153,11 @@ Related to `prodpublicks8` and `temp-privatek8s` clusters
 
 ### Issues Met during This Upgrade
         
-        ERROR : we have to specify the namespace where the SAS token lives, otherwises Kubernetes searches on the default namespace.
+
+
+#### Persistent Volumes of kind "Azurefile"
+
+ERROR : we had to specify the namespace where the SAS token lives, otherwises Kubernetes searches on the default namespace.
         
         as per the AKS CSI for Kube 1.22+ (ref. jenkins-infra/helpdesk#2930), we have to specify the namespace where the SAS token lives, otherwises Kubernetes searches on the default namespace.
 
