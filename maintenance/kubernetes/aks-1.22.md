@@ -34,7 +34,7 @@ Related to `prodpublicks8` and `temp-privatek8s` clusters
   There were no resources found with known deprecated apiVersions.
   ```
 
-  - Upgrade Procedure:
+  - [X] Upgrade Procedure:
     - [x] Ensure we have access to all clusters in kube-config
     - [x] Docker Helmfile Upgrade (kubectl)
     - [x] Merging last PRs on charts or putting it as on-hold
