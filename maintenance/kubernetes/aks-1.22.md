@@ -151,7 +151,7 @@ Related to `prodpublicks8` and `temp-privatek8s` clusters
          Here is the PR that added it: https://github.com/jenkins-infra/helm-charts/pull/158
          
          
-  - [x] Close maintenance windows in status (<https://github.com/jenkins-infra/status/pull/...>)
+  - [x] Close maintenance windows in status (<https://github.com/jenkins-infra/status/pull/189>)
   - [x] Write post mortem for what went wrong (if needed)
 - [x] Expected downtimes: none
 
