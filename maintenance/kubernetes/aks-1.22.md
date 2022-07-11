@@ -15,7 +15,7 @@ Related to `prodpublicks8` and `temp-privatek8s` clusters
 
 - [X] Announces:
   - [X] `status.jenkins.io`: <https://github.com/jenkins-infra/status/pull/99>
-  - [ ] IRC
+  - [x] IRC
   - [x] ML (jenkins-infra@googlegroups.com, jenkinsci-dev@googlegroups.com) [template bellow]
 
 - [X] Proceed to the upgrade
@@ -93,7 +93,7 @@ Related to `prodpublicks8` and `temp-privatek8s` clusters
   temp-privatek8s  eastus2     prod-jenkins-private-prod  1.22                 1.22.6                      Succeeded            temp-privatek8s-dns-c5f4426a.hcp.eastus2.azmk8s.io
 ```
 
-    - [x] Starting the upgrade in Azure (prodpublick8s)
+   - [x] Starting the upgrade in Azure (prodpublick8s)
       
 ```console
   # == prodpublick8s upgrade ==
@@ -147,14 +147,13 @@ Related to `prodpublicks8` and `temp-privatek8s` clusters
 ```
          
          
-         We did hit a problem with PVC and PV as the **new** parameter "secretNamespace" was not provided by our helm definition the secrets were not in the correct Namespace.
+  We did hit a problem with PVC and PV as the **new** parameter "secretNamespace" was not provided by our helm definition the secrets were not in the correct Namespace.
          Here is the PR that added it: https://github.com/jenkins-infra/helm-charts/pull/158
          
          
-         - [x] Close maintenance windows in status (<https://github.com/jenkins-infra/status/pull/...>)
-         - [x] Write post mortem for what went wrong (if needed)
-
-        - [x] Expected downtimes: none
+  - [x] Close maintenance windows in status (<https://github.com/jenkins-infra/status/pull/...>)
+  - [x] Write post mortem for what went wrong (if needed)
+- [x] Expected downtimes: none
 
 ### Issues Met during This Upgrade
         
