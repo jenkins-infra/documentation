@@ -151,7 +151,16 @@ Related to `prodpublicks8` and `temp-privatek8s` clusters
 
         - [x] Expected downtimes: none
 
-      ### Notes
+      ### BUG NOTE AFTER UPGRADE
+        
+        ERROR : we have to specify the namespace where the SAS token lives, otherwises Kubernetes searches on the default namespace.
+        
+        as per the AKS CSI for Kube 1.22+ (ref. jenkins-infra/helpdesk#2930), we have to specify the namespace where the SAS token lives, otherwises Kubernetes searches on the default namespace.
+
+        Same hotfix as hotfix(ldap) specify secretNamespace for ldap-backup PV #158 but for the release.ci.jenkins.io environment
+Long term fix: as Upgrade to Kubernetes 1.22 helpdesk#2930 will underline, we need to check all of the PVs to use the latest CSI driver, or at least patch all the remaining azurefile PVs.
+        For the record, we had to set the replica count to 0 on the pods in order to delete the PVC AND PV to apply the SecretNameSpace
+
 
       ### TEMPLATE EMAIL MAILING LIST : 
 
