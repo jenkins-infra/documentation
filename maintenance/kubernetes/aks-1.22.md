@@ -25,7 +25,7 @@ Related to `prodpublicks8` and `temp-privatek8s` clusters
       - [X] [Selected quotes](https://github.com/jenkins-infra/helpdesk/issues/2930#issuecomment-1168457423)
 
   - [x] Docker Helmfile Upgrade (kubectl):
-    - [x] <https://github.com/jenkins-infra/docker-helmfile/pull/>
+    - [x] <https://github.com/jenkins-infra/docker-helmfile/pull/105>
   
   - [x] Checking for deprecated APIs on Kube resources/helmfiles
   
