@@ -15,7 +15,7 @@ Related to `prodpublicks8` and `temp-privatek8s` clusters
 
 - [X] Announces:
   - [X] `status.jenkins.io`: <https://github.com/jenkins-infra/status/pull/99>
-  - [x] IRC
+  - [ ] IRC
   - [x] ML (jenkins-infra@googlegroups.com, jenkinsci-dev@googlegroups.com) [template bellow]
 
 - [X] Changelog Scrapping:
@@ -39,7 +39,7 @@ Related to `prodpublicks8` and `temp-privatek8s` clusters
     - [x] Docker Helmfile Upgrade (kubectl)
     - [x] Merging last PRs on charts or putting it as on-hold
     - [x] Pagerduty: Notify the on call person
-    - [x] Stopping the k8s management job
+    - [ ] Stopping the k8s management job
     - [x] Starting the upgrade in Azure (temp-prodk8s)
       # == temp-privatek8s upgrade ==
       # Go to https://infra.ci.jenkins.io/prepareShutdown/
