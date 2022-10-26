@@ -11,18 +11,13 @@ tags: maintenance
 
 Related to `prodpublicks8` and `temp-privatek8s` clusters
 
-- [ ] Issue: <https://github.com/jenkins-infra/helpdesk/issues/2930>
+- [x] Issue: <https://github.com/jenkins-infra/helpdesk/issues/3053>
 
-- [ ] Announces:
-  - [ ] `status.jenkins.io`: <https://github.com/jenkins-infra/status/pull/99>
-  - [ ] IRC
-  - [ ] ML (jenkins-infra@googlegroups.com, jenkinsci-dev@googlegroups.com) [template bellow]
-
-- [ ] Proceed to the upgrade
+- [ ] Pre-Flight checks: 
   - [ ] Changelog Scrapping:
-    - [ ] [Urgent Upgrade Notes for 1.22](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.22.md#urgent-upgrade-notes), nothing to report
-    - [ ] [Azure Changelog](https://github.com/Azure/AKS/blob/master/CHANGELOG.md): nothing to report
-      - [ ] [Selected quotes](https://github.com/jenkins-infra/helpdesk/issues/2930#issuecomment-1168457423)
+    - [x] [Urgent Upgrade Notes for 1.23](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.23.md#urgent-upgrade-notes), nothing to report
+    - [x] [Azure Changelog](https://github.com/Azure/AKS/blob/master/CHANGELOG.md): nothing to report
+      - [x] [Selected quotes](https://github.com/jenkins-infra/helpdesk/issues/3053#issuecomment-1292119216)
 
   - [ ] Docker Helmfile Upgrade (kubectl):
     - [ ] <https://github.com/jenkins-infra/docker-helmfile/pull/>
@@ -33,6 +28,14 @@ Related to `prodpublicks8` and `temp-privatek8s` clusters
     $ pluto detect-files -d ./charts
     There were no resources found with known deprecated apiVersions.
     ```
+
+- [ ] Announces:
+  - [ ] `status.jenkins.io`: <https://github.com/jenkins-infra/status/pull/99>
+  - [ ] IRC
+  - [ ] ML (jenkins-infra@googlegroups.com, jenkinsci-dev@googlegroups.com) [template bellow]
+
+- [ ] Proceed to the upgrade
+  
 
   - Upgrade Procedure:
     - [ ] Ensure we have access to all clusters in kube-config
