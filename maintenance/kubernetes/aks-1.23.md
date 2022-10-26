@@ -13,7 +13,7 @@ Related to `prodpublicks8` and `temp-privatek8s` clusters
 
 - [x] Issue: <https://github.com/jenkins-infra/helpdesk/issues/3053>
 
-- [ ] Pre-Flight checks: 
+- [x] Pre-Flight checks: 
   - [x] Changelog Scrapping:
     - [x] [Urgent Upgrade Notes for 1.23](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.23.md#urgent-upgrade-notes), nothing to report
     - [x] [Azure Changelog](https://github.com/Azure/AKS/blob/master/CHANGELOG.md): nothing to report
@@ -27,62 +27,49 @@ Related to `prodpublicks8` and `temp-privatek8s` clusters
 - [ ] Proceed to the upgrade
   
   - Upgrade Procedure:
-    - [ ] Ensure we have access to all clusters in kube-config
-    - [ ] Docker Helmfile Upgrade (kubectl)
-    - [ ] Merging last PRs on charts or putting it as on-hold
-    - [ ] Pagerduty: Notify the on call person
-    - [ ] Stopping the k8s management job
-    - [ ] Starting the upgrade in Azure (temp-prodk8s)
+    - [x] Ensure we have access to all clusters in kube-config
+    - [x] Pagerduty: Notify the on call person
+    - [x] Stopping the k8s management job
+    - [x] Starting the upgrade in Azure (temp-prodk8s)
 
         ```console
         # == temp-privatek8s upgrade ==
-        # Go to https://infra.ci.jenkins.io/prepareShutdown/
+        # add a message to prepare the shutdown by using: https://infra.ci.jenkins.io/prepareShutdown/
 
         # login
         $ az login
 
         # available upgrades
         $ az aks get-upgrades --resource-group prod-jenkins-private-prod --name temp-privatek8s --output table
-        Name     ResourceGroup    MasterVersion    Upgrades
-        -------  ---------------  ---------------  --------------
-        default  temp-privatek8s  1.21.9           1.22.4, 1.22.6
-
-        # upgrade control-plane first
+          Name     ResourceGroup              MasterVersion    Upgrades
+          -------  -------------------------  ---------------  ---------------
+          default  prod-jenkins-private-prod  1.22.15          1.23.8, 1.23.12
+        # upgrade full, control-plane AND nodes
         $ az aks upgrade \
             --resource-group prod-jenkins-private-prod \
             --name temp-privatek8s \
-            --control-plane-only \
-            --kubernetes-version 1.22
+            --kubernetes-version 1.23.12
 
             Kubernetes may be unavailable during cluster upgrades.
             Are you sure you want to perform this operation? (y/N): y
-            Since control-plane-only argument is specified, this will upgrade only the control plane to 1.22. Node pool will not change. Continue? (y/N): y
-
-        $ az aks show --resource-group prod-jenkins-private-prod --name temp-privatek8s --output table
-        Name             Location    ResourceGroup              KubernetesVersion    CurrentKubernetesVersion    ProvisioningState    Fqdn
-        ---------------  ----------  -------------------------  -------------------  --------------------------  -------------------  --------------------------------------------------
-        temp-privatek8s  eastus2     prod-jenkins-private-prod  1.22                 1.22.6                      Upgrading            temp-privatek8s-dns-c5f4426a.hcp.eastus2.azmk8s.io
-
-        $ az aks show --resource-group prod-jenkins-private-prod --name temp-privatek8s --output table
-        Name             Location    ResourceGroup              KubernetesVersion    CurrentKubernetesVersion    ProvisioningState    Fqdn
-        ---------------  ----------  -------------------------  -------------------  --------------------------  -------------------  --------------------------------------------------
-        temp-privatek8s  eastus2     prod-jenkins-private-prod  1.22                 1.22.6                      Succeeded            temp-privatek8s-dns-c5f4426a.hcp.eastus2.azmk8s.io
-
-        # upgrade the nodes
-        $ az aks upgrade \
-            --resource-group prod-jenkins-private-prod \
-            --name temp-privatek8s \
-            --kubernetes-version 1.22
-
-            Kubernetes may be unavailable during cluster upgrades.
-            Are you sure you want to perform this operation? (y/N): y
-            The cluster is already on version 1.22 and is not in a failed state. No operations will occur when upgrading to the same version if the cluster is not in a failed state.
-            Since control-plane-only argument is not specified, this will upgrade the control plane AND all nodepools to version 1.22. Continue? (y/N): y
-
-        $ az aks show --resource-group prod-jenkins-private-prod --name temp-privatek8s --output table
-        Name             Location    ResourceGroup              KubernetesVersion    CurrentKubernetesVersion    ProvisioningState    Fqdn
-        ---------------  ----------  -------------------------  -------------------  --------------------------  -------------------  --------------------------------------------------
-        temp-privatek8s  eastus2     prod-jenkins-private-prod  1.22                 1.22.6                      Succeeded            temp-privatek8s-dns-c5f4426a.hcp.eastus2.azmk8s.io
+            Since control-plane-only argument is not specified, this will upgrade the control plane AND all nodepools to version 1.23.12. Continue? (y/N): y
+            ....
+        # Before upgrade
+        $ kubectl get nodes                         
+          NAME                                  STATUS   ROLES   AGE   VERSION
+          aks-infracipool-10382320-vmss00004g   Ready    agent   15m   v1.22.15
+          aks-linuxpool-29019427-vmss00000m     Ready    agent   24h   v1.22.15
+          aks-linuxpool-29019427-vmss00001g     Ready    agent   20m   v1.22.15
+          aks-systempool-13530583-vmss000002    Ready    agent   45h   v1.22.15
+        
+        # After upgrade
+        $ kubectl get nodes      
+          NAME                                  STATUS   ROLES   AGE     VERSION
+          aks-infracipool-10382320-vmss00004g   Ready    agent   15m     v1.23.12
+          aks-infracipool-10382320-vmss00004h   Ready    agent   2m39s   v1.23.12
+          aks-linuxpool-29019427-vmss00000m     Ready    agent   13m     v1.23.12
+          aks-linuxpool-29019427-vmss00001g     Ready    agent   10m     v1.23.12
+          aks-systempool-13530583-vmss000002    Ready    agent   14m     v1.23.12
         ```
 
     - [ ] Starting the upgrade in Azure (prodpublick8s)
