@@ -102,7 +102,7 @@ Related to `prodpublicks8` and `temp-privatek8s` clusters
             prodpublick8s  eastus2     prodpublick8s    1.23.12              1.23.12                     Succeeded            prodpublick8s-dns-bdcd7389.hcp.eastus2.azmk8s.io
         ```
 
-    - [ ] Close maintenance windows in status (<https://github.com/jenkins-infra/status/pull/189>)
+    - [x] Close maintenance windows in status (<https://github.com/jenkins-infra/status/pull/212>)
     - [x] Write post mortem for what went wrong (if needed)
 
 - [x] Expected downtimes: none
