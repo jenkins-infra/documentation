@@ -1,0 +1,82 @@
+# Infra Meetings
+
+## Publish Meeting Notes
+
+Publishing the meeting notes follows these steps:
+
+1. <<Publish Recording to YouTube>>
+2. <<Publish Notes to community.jenkins.io>>
+3. <<Publish Note to GitHub>>
+
+### Publish Recording to YouTube
+
+Once the Zoom cloud recording of the previous meeting is available:
+
+* Log-in in Zoom with the CDF account (or the account owning the recording)
+* Download the recording, which is composed of 3 files:
+** An `mp4` video (+audio) recording
+** An `mp4` audio-only recording
+** A `vss` text file with the audio transcript
+
+* Check the name of the previous recordings in the YouTube channel: https://www.youtube.com/c/jenkinscicd
+** Should be something like `YYYY MM DD Jenkins Infra Meeting`
+
+* Rename the mp4 video to follow the name pattern
+** You can delete the audio-only and transcript file (not needed)
+
+* Generate a media cover from https://docs.google.com/presentation/d/1Q1PgNnRTgzBpVRXPqQo3PudzCa2eoc6_1_NRjFRMLrU/edit?usp=sharing
+** Keep the same naming pattern (e.g. `YYYY MM DD Jenkins Infra Meeting`) in the media cover
+** Download it as PNG
+
+* Log-in on YouTube, and then change account to "Jenkins" (top-right button with your account avatar -> "change account" menu item -> "Jenkins")
+** If you do not have access to it, request it on the jenkinsci-dev mailing list
+
+* Click on "Upload video", select the `mp4` renamed file
+* While it is uploading:
+** Click on "add thumbnail" and select the PNG file (used for OpenGraph)
+** Select the playlist "Jenkins Infrastructure Project"
+** No, it's not made for kids (we never know)
+** Category: Science & technologies
+** No monetization
+
+* Save as Public (no need for copyright for infra meeting)
+** While its processing, you can already get the link to put in the meeting notes
+
+* Check the video is correctly published on Youtube, then delete it from the Zoom account
+
+### Publish Notes to community.jenkins.io
+
+Once you have a YouTube link to the published recording:
+
+* Log-in on https://community.jenkins.io
+* On the category "Contributing", click the label "Infrastructure"
+* Click on the button "New Topic": that should open a popup with the pre-filled categories "Contributing" and "Infrastructure"
+* Set the name to `Infrastructure Team Meeting - <month> DD, YYYY`
+* Copy the YouTube link as first line of the post
+* Copy and paste, from the corresponding https://hackmd.io collaborative notes, the following text sections:
+** "Attendees"
+** "Announcements :loudspeaker:"
+** "Notes :book:"
+* Add the labels "meetings" and "sig-infra"
+* You can proceed to publish the topic
+
+
+### Publish Note to GitHub
+
+* Browse to the corresponding https://hackmd.io collaborative notes
+* Update the last section:
+** Add an `x` on each of the textual checkboxes
+** Add the YouTube and community link on the corresponding bullet lists
+
+* On the top right toolbar, click the "..." (3 points) buttons which shows an "options menu"
+* Select the "Versions and GitHub Sync" menu item, which open a modal window
+* Click on the "Push to GitHub" button
+* Select "Switch" if you have a popup warning about endlines
+* Fill the form:
+** Repository is link:https://github.com/jenkins-infra/documentation[jenkins-infra/documentation]
+** Branch: `main`
+** Select file: create a new file by specifying the expected path `meetings/YYYY-MM-DD.md`
+** Choose version to push: set "Name" to publish (it's the short commit message, it's enough)
+* Click the button "Push"
+
+* Once pushed to GitHub, you can safely delete the collaborative note from hackmd.io
