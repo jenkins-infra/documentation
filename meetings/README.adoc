@@ -26,7 +26,7 @@ Once the Zoom cloud recording of the previous meeting is available:
 
 * Generate a media cover from https://docs.google.com/presentation/d/1Q1PgNnRTgzBpVRXPqQo3PudzCa2eoc6_1_NRjFRMLrU/edit?usp=sharing
 ** Keep the same naming pattern (e.g. `YYYY MM DD Jenkins Infra Meeting`) in the media cover
-** Download it as PNG
+** Download it as PNG (File/Download/PNG Image (.png, current slide)
 
 * Log-in on YouTube, and then change account to "Jenkins" (top-right button with your account avatar -> "change account" menu item -> "Jenkins")
 ** If you do not have access to it, request it on the jenkinsci-dev mailing list
