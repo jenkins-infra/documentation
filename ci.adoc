@@ -26,7 +26,6 @@ when referencing nodes, e.g. in the `Jenkinsfile`.
 
 * `amd64` : An agent running an AMD or Intel 64 bit processor
 * `arm64` : An agent running an ARM 64 bit processor on AWS (Amazon Graviton)
-* `ppc64le` : An agent running an IBM PowerPC 64 bit processor
 * `s390x` : An agent running an IBM System 390x (Z series) processor
 
 ==== Container Agents
@@ -42,6 +41,10 @@ To use a container agent, specify one of the following labels:
 * `maven-windows`: A maven 3 Windows container with JDK8
 * `maven-11`: A maven 3 (Debian) container with JDK11
 * `maven-11-windows`: A maven 3 Windows container with JDK11
+* `maven-17`: A maven 3 (Debian) container with JDK17
+* `maven-17-windows`: A maven 3 Windows container with JDK17
+* `maven-19`: A maven 3 (Debian) container with JDK19
+* `maven-19-windows`: A maven 3 Windows container with JDK19
 * `node`: A Node (Alpine) container
 * `ruby` :  A Ruby 2 (Debian) container
 * `alpine` : An Alpine-based container with no additional tooling.
@@ -53,9 +56,10 @@ The reason is related to the ability of quickly moving the workload to another k
 
 We generally prefer to use the Docker Pipeline plugin for system dependencies in the `Jenkinsfile` but it's also possible to use some basic, pre-configured, tool installers.
 
-* `jdk7` A recent OpenJDK 7 version
-* `jdk8` A recent OpenJDK 8 version
-* `jdk11` A recent OpenJDK 11 version from link:https://download.java.net/java/ga/jdk11/openjdk-11_linux-x64_bin.tar.gz[java.net]
+* `jdk8` A recent OpenJDK 8 version from link:https://github.com/adoptium/[java adoptium]
+* `jdk11` A recent OpenJDK 11 version from link:https://github.com/adoptium/[java adoptium]
+* `jdk17` A recent OpenJDK 17 version from link:https://github.com/adoptium/[java adoptium]
+* `jdk19` A recent OpenJDK 19 version from link:https://github.com/adoptium/[java adoptium]
 * `mvn` A recent Maven 3.x version
 * `groovy` A recent Groovy 2.x version
 
