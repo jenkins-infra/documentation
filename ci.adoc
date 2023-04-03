@@ -4,57 +4,93 @@ This document covers the services available on
 link:https://ci.jenkins.io[ci.jenkins.io]
 and our internal `trusted.ci` instance.
 
+== Node Labels
 
-=== Node Labels
+We use node labels to define capabilities of the nodes in our Jenkins clusters.
 
-We use node labels to define capabilities of the nodes in our Jenkins clusters. These are conventional and are to be used
-when referencing nodes, e.g. in the `Jenkinsfile`.
+These labels are a "contract" between ci.jenkins.io's infrastructure maintainers and users.
+The implementation of agent "types" can vary depending on the underlying infrastructure: it can be containers, virtual machines, in different locations.
 
-* `linux` \ `docker` (alias of `java`): A Linux (Ubuntu 20.04 LTS) instance with Docker Engine Community Edition
-** On AWS (label `aws`): https://github.com/jenkins-infra/jenkins-infra/blob/production/hieradata/clients/azure.ci.jenkins.io.yaml#L121[]
-** On Azure: https://github.com/jenkins-infra/jenkins-infra/blob/production/hieradata/clients/azure.ci.jenkins.io.yaml#L172[] 
-* `windows` : A Windows 2019 instance with 4vCPU/16GB RAM provisioned (link:https://azure.microsoft.com/en-us/documentation/articles/cloud-services-sizes-specs/[Standard_D4s_v3] on Azure or link:https://aws.amazon.com/en/ec2/instance-types/[T3Xlarge] on AWS)
-* `highmem` : A Linux (Ubuntu 20.04 LTS) instance with 16vCPU/64GB RAM
-(link:https://azure.microsoft.com/en-us/documentation/articles/cloud-services-sizes-specs/[Standard_D16s_v3] on Azure or link:https://aws.amazon.com/en/ec2/instance-types/[M54xlarge] on AWS). Please avoid unless running ATH or other high-memory capacity instances.
-* `docker-highmem` : A Linux (Ubuntu 20.04 LTS) instance with 16vCPU/64GB RAM and a running Docker daemon
-(link:https://azure.microsoft.com/en-us/documentation/articles/cloud-services-sizes-specs/[Standard_D16s_v3] on Azure or link:https://aws.amazon.com/en/ec2/instance-types/[M54xlarge] on AWS). Please avoid unless running ATH or other high-memory capacity instances.
-* `arm64docker` : An ARM64 Linux (Ubuntu 20.04 LTS) instance with 4vCPU/16GB RAM and a running Docker daemon
-(link:https://aws.amazon.com/en/ec2/instance-types/[A1Xlarge] on AWS)
-* `docker-windows` : A Windows 2019 instance with 4vCPU/16GB RAM provisioned (link:https://azure.microsoft.com/en-us/documentation/articles/cloud-services-sizes-specs/[Standard_D4s_v3] on Azure or link:https://aws.amazon.com/en/ec2/instance-types/[T3Xlarge] on AWS) that is able to run Windows Docker images
+All agents are ephemeral and are destroyed once a build is finished (wether it's successful or failed).
 
-==== Node Labels - Processors
+- If you are building a plugin, the node/agent specification is abstracted by the pipeline library function `buildPlugin()` (https://github.com/jenkins-infra/pipeline-library#buildplugin) which must be used.
+  Please note that it is not recommended to use the pipeline instructions specific to Kubernetes (such as `podTemplate()` or `agent { kubernetes {}}}` unless you really need it (e.g. if the default set of container agent templates does not fit your needs).
+  The reason is related to the ability of quickly moving the workload to another kind of agents (either VMs, Azure Containers, etc.).
 
-* `amd64` : An agent running an AMD or Intel 64 bit processor
-* `arm64` : An agent running an ARM 64 bit processor on AWS (Amazon Graviton)
-* `s390x` : An agent running an IBM System 390x (Z series) processor
+- Otherwise you have access to the labels described below.
 
-==== Container Agents
+== Tools Labels
 
-We use link:https://plugins.jenkins.io/kubernetes/[Kubernetes Agents] with a set of different kubernetes clusters to execute container based agents.
-Currently it is only available on ci.jenkins.io, and not yet on trusted.ci or cert.ci.
+These labels are defining requests for agent by specifying required tooling:
 
-The agent images are all built from the link:https://github.com/jenkins-infra/docker-inbound-agents[jenkins-infra/docker-inbound-agents] repository.
+* [Recommended for Linux] `maven-17`: A maven 3 Linux container with JDK17
+* [Recommended for Windows] `maven-17-windows`: A maven 3 Windows container with JDK17
+* [Recommended for non-Java Linux] `node`, `ruby`, `webbuilder`: A NodeJS + NPM + Ruby (3) Linux container (with ASDF available)
+* [Recommended for Docker Linux containers] `docker && linux-amd64`
 
-To use a container agent, specify one of the following labels:
-
-* `maven`: A Maven 3 (Debian) container with JDK8
-* `maven-windows`: A maven 3 Windows container with JDK8
-* `maven-11`: A maven 3 (Debian) container with JDK11
+* `maven-11`: A maven 3 Linux container with JDK11
 * `maven-11-windows`: A maven 3 Windows container with JDK11
-* `maven-17`: A maven 3 (Debian) container with JDK17
-* `maven-17-windows`: A maven 3 Windows container with JDK17
-* `maven-19`: A maven 3 (Debian) container with JDK19
+* `maven-19`: A maven 3 Linux container with JDK19
 * `maven-19-windows`: A maven 3 Windows container with JDK19
-* `node`: A Node (Alpine) container
-* `ruby` :  A Ruby 2 (Debian) container
-* `alpine` : An Alpine-based container with no additional tooling.
+* [Legacy only] `maven`: A Maven 3 Linux container with JDK8
+* [Legacy only] `maven-windows`: A maven 3 Windows container with JDK8
 
-Please note that it is not recommended to use the pipeline instructions specific to Kubernetes (such as `podTemplate()` or `agent { kubernetes {}}}` unless you really need it (e.g. if the default set of container agent templates does not fit your needs).
-The reason is related to the ability of quickly moving the workload to another kind of agents (either VMs, Azure Containers, etc.).
+=== Docker Labels
+
+Docker requires a Virtual Machine to run with enough safety (as most of the workloads requires both a build and a run of a container).
+
+The following labels are provided:
+
+* `docker`: spawns a Linux (x86) VM agent with a Docker Engine Community Edition available
+* `arm64docker`: spawns a Linux ARM64 VM agent with a Docker Engine Community Edition available
+* `docker-windows-2022`: spawns a Windows 2022 VM with Docker Windows Container feature enabled (and Docker Community Edition)
+* `docker-windows-2019`: spawns a Windows 2019 VM with Docker Windows Container feature enabled (and Docker Community Edition)
+
+== Advanced Labels
+
+More labels are provided to cover advanced use cases. Please use these labels with cautious (because of the cost and the non stability of these labels):
+
+=== Node Labels - Processors
+
+* `amd64`: An agent running an AMD or Intel 64 bit processor
+* `arm64`: An agent running an ARM 64 bit processor on AWS (Amazon Graviton)
+* `s390x`: An agent running an IBM System 390x (Z series) processor
+
+=== Container / VM Labels
+
+This is avery advanced use case. You can trigger the "type" of agent with very specific
+
+* `vm`: spawns a Virtual Machine Agent. Usually it is a 4 vCPUs and 16 Gb memory machine.
+* `container`: spawns a container Agent. Usually limited to 4 vCPUs and 8 Gb memory.
+* `highmem`: spawns a Virtual Machine agent with 64 Gb of memory. Avoid it unless really required (costs a lot).
+
+== Cloud Labels
+
+Please note that these labels are not always guaranteed (depends on the cloud billing and availability)
+
+For AWS:
+
+* `aws`, `ec2`: spawns a VM agent in AWS EC2
+* `cik8s`: spawns an AWS EKS container (Kubernetes) agent
+
+For Azure:
+
+* `azure`: spawns an agent in Azure (can be either a VM or a container)
+* `aci`: spawns a container agent in Azure ACI
+
+For DigitalOcean:
+
+* `doks`: spawns a (kubernetes) container agent in DigitalOcean
+
+== Operating System Labels
+
+* `ubuntu-20.04`: spawns an Ubuntu 20.04 LTS Virtual Machine agent
+* `windows-2019`: spawns a Windows Server LTSC 2019 Virtual Machine Agent
+* `windows-2022`: spawns a Windows Server LTSC 2022 Virtual Machine Agent
 
 === Tool Installers
 
-We generally prefer to use the Docker Pipeline plugin for system dependencies in the `Jenkinsfile` but it's also possible to use some basic, pre-configured, tool installers.
+The following Jenkins tool installers are provided:
 
 * `jdk8` A recent OpenJDK 8 version from link:https://github.com/adoptium/[java adoptium]
 * `jdk11` A recent OpenJDK 11 version from link:https://github.com/adoptium/[java adoptium]
@@ -62,12 +98,6 @@ We generally prefer to use the Docker Pipeline plugin for system dependencies in
 * `jdk19` A recent OpenJDK 19 version from link:https://github.com/adoptium/[java adoptium]
 * `mvn` A recent Maven 3.x version
 * `groovy` A recent Groovy 2.x version
-
-== Pipeline plugins
-
-* Pipeline
-* Docker Pipeline
-* Blue Ocean
 
 == Caching mirrors
 
