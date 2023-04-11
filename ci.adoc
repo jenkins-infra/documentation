@@ -136,15 +136,17 @@ The main goals are to decrease the consumed bandwidth (many terabytes per month)
 In case you need for whatever reason to disable this mechanism (discouraged), you have two possibilities:
 
 * Temporarily, on your pull request add a `skip-artifact-caching-proxy` label
-* Permanently, in your Jenkinsfile add `useArtifactCachingProxy: false` to https://github.com/jenkinsci/archetypes/blob/master/common-files/Jenkinsfile[the recommanded `buildPlugin` configuration], ex:
+* Permanently, in your Jenkinsfile add `useArtifactCachingProxy: false` to https://github.com/jenkinsci/archetypes/blob/master/common-files/Jenkinsfile[the recommanded `buildPlugin` configuration]
 
-  [source,groovy]
-  ----
-  buildPlugin(
-    useContainerAgent: true, // Set to `false` if you need to use Docker for containerized tests
-    useArtifactCachingProxy: false,
-    configurations: [
-      [platform: 'linux', jdk: 17],
-      [platform: 'windows', jdk: 11],
-  ])
-  ----
+Ex:
+
+[source,groovy]
+----
+buildPlugin(
+  useContainerAgent: true, // Set to `false` if you need to use Docker for containerized tests
+  useArtifactCachingProxy: false,
+  configurations: [
+    [platform: 'linux', jdk: 17],
+    [platform: 'windows', jdk: 11],
+])
+----
