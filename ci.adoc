@@ -137,7 +137,9 @@ In case you need for whatever reason to disable this mechanism (discouraged), yo
 
 * Temporarily, on your pull request add a `skip-artifact-caching-proxy` label
 * Permanently, in your Jenkinsfile add `useArtifactCachingProxy: false` to https://github.com/jenkinsci/archetypes/blob/master/common-files/Jenkinsfile[the recommanded `buildPlugin` configuration], ex:
-  ```
+  [source,groovy]
+  Jenkinsfile
+  ----
   buildPlugin(
     useContainerAgent: true, // Set to `false` if you need to use Docker for containerized tests
     useArtifactCachingProxy: false,
@@ -145,4 +147,4 @@ In case you need for whatever reason to disable this mechanism (discouraged), yo
       [platform: 'linux', jdk: 17],
       [platform: 'windows', jdk: 11],
   ])
-  ```
+  ----
