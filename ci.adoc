@@ -129,7 +129,7 @@ Additionally, https://repo.azure.jenkins.io/ mirrors all non-snapshot downloads 
 
 == Artifact Caching Proxy
 
-The [artifact caching proxy](https://github.com/jenkins-infra/helpdesk/issues/2752) is a mechanism we've put in place using [nginx proxy](https://github.com/jenkins-infra/helm-charts/blob/main/charts/artifact-caching-proxy/templates/nginx-proxy-configmap.yaml) in front of repo.jenkins-ci.org (our JFrog sponsored Artifactory instance) and Maven Central to cache artifacts download requests.
+The [artifact caching proxy](https://github.com/jenkins-infra/helpdesk/issues/2752) is a mechanism we've put in place using [nginx proxy](https://github.com/jenkins-infra/helm-charts/blob/main/charts/artifact-caching-proxy/templates/nginx-proxy-configmap.yaml) in front of repo.jenkins-ci.org (our JFrog sponsored Artifactory instance) and Maven Central to cache artifact download requests.
 
 The main goals are to decrease the consumed bandwidth (many terabytes per month) and to increase Jenkins infrastructure reliability and resilience.
 
