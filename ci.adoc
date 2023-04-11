@@ -84,7 +84,7 @@ For DigitalOcean:
 
 == Operating System Labels
 
-* `ubuntu-20.04`: spawns an Ubuntu 20.04 LTS Virtual Machine agent
+* `ubuntu-22.04`: spawns an Ubuntu 22.04 LTS Virtual Machine agent
 * `windows-2019`: spawns a Windows Server LTSC 2019 Virtual Machine Agent
 * `windows-2022`: spawns a Windows Server LTSC 2022 Virtual Machine Agent
 
