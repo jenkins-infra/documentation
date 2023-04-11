@@ -126,3 +126,22 @@ Additionally, https://repo.azure.jenkins.io/ mirrors all non-snapshot downloads 
     </mirrors>
 </settings>
 ----
+
+== Artifact Caching Proxy
+
+The [artifact caching proxy](https://github.com/jenkins-infra/helpdesk/issues/2752) is a mechanism we've put in place using [nginx proxy](https://github.com/jenkins-infra/helm-charts/blob/main/charts/artifact-caching-proxy/templates/nginx-proxy-configmap.yaml) in front of repo.jenkins-ci.org (our JFrog sponsored Artifactory instance) and Maven Central to cache artifacts download requests.
+
+The main goals are to decrease the consumed bandwidth (many terabytes per month) and to increase Jenkins infrastructure reliability and resilience.
+
+In case you need for whatever reason to disable this mechanism (discouraged), you have two possibilities:
+- on your pull request, add a `skip-artifact-caching-proxy` label
+- in your Jenkinsfile, add `useArtifactCachingProxy: false` to [the recommanded `buildPlugin` configuration](https://github.com/jenkinsci/archetypes/blob/master/common-files/Jenkinsfile), ex:
+```
+buildPlugin(
+  useContainerAgent: true, // Set to `false` if you need to use Docker for containerized tests
+  useArtifactCachingProxy: false,
+  configurations: [
+    [platform: 'linux', jdk: 17],
+    [platform: 'windows', jdk: 11],
+])
+```
