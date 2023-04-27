@@ -62,7 +62,7 @@ This is avery advanced use case. You can trigger the "type" of agent with very s
 
 * `vm`: spawns a Virtual Machine Agent. Usually it is a 4 vCPUs and 16 Gb memory machine.
 * `container`: spawns a container Agent. Usually limited to 4 vCPUs and 8 Gb memory.
-* `highmem`: spawns a Virtual Machine agent with 64 Gb of memory. Avoid it unless really required (costs a lot).
+* `highmem`: spawns a Virtual Machine agent with 8 vCPUs and 32 Gb of memory. Avoid it unless really required (costs a lot).
 
 == Cloud Labels
 
