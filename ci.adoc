@@ -32,6 +32,7 @@ These labels are defining requests for agent by specifying required tooling:
 * `maven-11-windows`: A maven 3 Windows container with JDK11
 * `maven-19`: A maven 3 Linux container with JDK19
 * `maven-19-windows`: A maven 3 Windows container with JDK19
+* `maven-21`: A maven 3 Linux container with JDK21
 * [Legacy only] `maven`: A Maven 3 Linux container with JDK8
 * [Legacy only] `maven-windows`: A maven 3 Windows container with JDK8
 
