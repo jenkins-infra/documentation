@@ -30,8 +30,8 @@ These labels are defining requests for agent by specifying required tooling:
 
 * `maven-11`: A maven 3 Linux container with JDK11
 * `maven-11-windows`: A maven 3 Windows container with JDK11
-* `maven-19`: A maven 3 Linux container with JDK19
-* `maven-19-windows`: A maven 3 Windows container with JDK19
+* `maven-21`: A maven 3 Linux container with JDK21
+* `maven-21-windows`: A maven 3 Windows container with JDK21
 * `maven-21`: A maven 3 Linux container with JDK21
 * [Legacy only] `maven`: A Maven 3 Linux container with JDK8
 * [Legacy only] `maven-windows`: A maven 3 Windows container with JDK8
@@ -96,9 +96,12 @@ The following Jenkins tool installers are provided:
 * `jdk8` A recent OpenJDK 8 version from link:https://github.com/adoptium/[java adoptium]
 * `jdk11` A recent OpenJDK 11 version from link:https://github.com/adoptium/[java adoptium]
 * `jdk17` A recent OpenJDK 17 version from link:https://github.com/adoptium/[java adoptium]
-* `jdk19` A recent OpenJDK 19 version from link:https://github.com/adoptium/[java adoptium]
+* `jdk21` A recent OpenJDK 21 version from link:https://github.com/adoptium/[java adoptium]
 * `mvn` A recent Maven 3.x version
 * `groovy` A recent Groovy 2.x version
+
+> [!NOTE]  
+> JDK support on ci.jenkins.io is driven by the "2+2+2" lifecycle as described in https://github.com/jenkinsci/jep/pull/400
 
 == Caching mirrors
 
