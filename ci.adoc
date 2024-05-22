@@ -69,19 +69,11 @@ This is avery advanced use case. You can trigger the "type" of agent with very s
 
 Please note that these labels are not always guaranteed (depends on the cloud billing and availability)
 
-For AWS:
-
-* `aws`, `ec2`: spawns a VM agent in AWS EC2
-* `cik8s`: spawns an AWS EKS container (Kubernetes) agent
-
 For Azure:
 
-* `azure`: spawns an agent in Azure (can be either a VM or a container)
+* `azure`: spawns a VM agent in Azure
 * `aci`: spawns a container agent in Azure ACI
-
-For DigitalOcean:
-
-* `doks`: spawns a (kubernetes) container agent in DigitalOcean
+* `ci.jenkins.io-agents-1`: spawns a kubernetes agent in Azure
 
 == Operating System Labels
 
@@ -109,12 +101,15 @@ https://repo.jenkins-ci.org/nodejs-dist/ and https://repo.jenkins-ci.org/npm-dis
 
 There is also a mirror of the npm package repository; to use it:
 
-    npm config set registry https://repo.jenkins-ci.org/api/npm/npm/
+```shell
+npm config set registry https://repo.jenkins-ci.org/api/npm/npm/
+```
 
 or
 
-    yarn config set -- --registry https://repo.jenkins-ci.org/api/npm/npm/
-
+```shell
+yarn config set -- --registry https://repo.jenkins-ci.org/api/npm/npm/
+```
 
 == Artifact Caching Proxy
 
