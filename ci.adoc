@@ -51,13 +51,13 @@ The following labels are provided:
 
 As Docker can be needed for Java projects (using "Test Container" for instance), you can also request VM with Docker and custom Java tools:
 
-* 'ubuntu-22-amd64-maven8': to get an Ubuntu 22 VM with an x86_64 CPU, Docker, Maven 3 and JDK8
-* 'ubuntu-22-amd64-maven11': to get an Ubuntu 22 VM with an x86_64 CPU, Docker, Maven 3 and JDK11
-* 'ubuntu-22-amd64-maven17': to get an Ubuntu 22 VM with an x86_64 CPU, Docker, Maven 3 and JDK17
-* 'ubuntu-22-amd64-maven21': to get an Ubuntu 22 VM with an x86_64 CPU, Docker, Maven 3 and JDK21
+* `ubuntu-22-amd64-maven8`: to get an Ubuntu 22 VM with an x86_64 CPU, Docker, Maven 3 and JDK8
+* `ubuntu-22-amd64-maven11`: to get an Ubuntu 22 VM with an x86_64 CPU, Docker, Maven 3 and JDK11
+* `ubuntu-22-amd64-maven17`: to get an Ubuntu 22 VM with an x86_64 CPU, Docker, Maven 3 and JDK17
+* `ubuntu-22-amd64-maven21`: to get an Ubuntu 22 VM with an x86_64 CPU, Docker, Maven 3 and JDK21
 
-* 'ubuntu-22-arm64-maven17': to get an Ubuntu 22 VM with an arm64 CPU, Docker, Maven 3 and JDK17
-* 'ubuntu-22-arm64-maven21': to get an Ubuntu 22 VM with an arm64 CPU, Docker, Maven 3 and JDK21
+* `ubuntu-22-arm64-maven17`: to get an Ubuntu 22 VM with an arm64 CPU, Docker, Maven 3 and JDK17
+* `ubuntu-22-arm64-maven21`: to get an Ubuntu 22 VM with an arm64 CPU, Docker, Maven 3 and JDK21
 
 == Advanced Labels
 
