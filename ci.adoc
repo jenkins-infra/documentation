@@ -30,13 +30,13 @@ These labels are defining requests for agent by specifying required tooling:
 * [Recommended for non-Java Linux] `node`, `ruby`, `webbuilder`: A NodeJS + NPM + Ruby (3) Linux container (with ASDF available)
 * [Recommended for Docker Linux containers] `docker && linux-amd64`
 
+* `maven-8`: A maven 3 Linux container with JDK8
+* `maven-8-windows`: A maven 3 Windows container with JDK8
 * `maven-11`: A maven 3 Linux container with JDK11
 * `maven-11-windows`: A maven 3 Windows container with JDK11
 * `maven-21`: A maven 3 Linux container with JDK21
 * `maven-21-windows`: A maven 3 Windows container with JDK21
 * `maven-21`: A maven 3 Linux container with JDK21
-* [Legacy only] `maven`: A Maven 3 Linux container with JDK8
-* [Legacy only] `maven-windows`: A maven 3 Windows container with JDK8
 
 === Docker Labels
 
@@ -65,8 +65,8 @@ More labels are provided to cover advanced use cases. Please use these labels wi
 
 === Node Labels - Processors
 
-* `amd64`: An agent running an AMD or Intel 64 bit processor
-* `arm64`: An agent running an ARM 64 bit processor on AWS (Amazon Graviton)
+* `linux-amd64`: An agent running an AMD or Intel 64 bit processor
+* `linux-arm64`: An agent running an ARM 64 bit processor on AWS (Amazon Graviton)
 * `s390x`: An agent running an IBM System 390x (Z series) processor
 
 === Container / VM Labels
@@ -76,16 +76,6 @@ This is avery advanced use case. You can trigger the "type" of agent with very s
 * `vm`: spawns a Virtual Machine Agent. Usually it is a 4 vCPUs and 16 Gb memory machine.
 * `container`: spawns a container Agent. Usually limited to 4 vCPUs and 8 Gb memory.
 * `highmem`: spawns a Virtual Machine agent with 8 vCPUs and 32 Gb of memory. Avoid it unless really required (costs a lot).
-
-== Cloud Labels
-
-Please note that these labels are not always guaranteed (depends on the cloud billing and availability)
-
-For Azure:
-
-* `azure`: spawns a VM agent in Azure
-* `aci`: spawns a container agent in Azure ACI
-* `ci.jenkins.io-agents-1`: spawns a kubernetes agent in Azure
 
 == Operating System Labels
 
