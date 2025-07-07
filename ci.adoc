@@ -17,7 +17,7 @@ All agents are ephemeral by default and are destroyed once a build is finished (
 
 - If you are building a plugin, the node/agent specification is abstracted by the pipeline library function `buildPlugin()` (https://github.com/jenkins-infra/pipeline-library#buildplugin) which must be used.
   Please note that it is not recommended to use the pipeline instructions specific to Kubernetes (such as `podTemplate()` or `agent { kubernetes {}}}` unless you really need it (e.g. if the default set of container agent templates does not fit your needs).
-  The reason is related to the ability of quickly moving the workload to another kind of agents (either VMs, Azure Containers, etc.).
+  The reason is related to the ability of quickly moving the workload to another kind of agents (either VMs, Containers, etc.).
 
 - Otherwise you have access to the labels described below.
 
@@ -25,8 +25,8 @@ All agents are ephemeral by default and are destroyed once a build is finished (
 
 These labels are defining requests for agent by specifying required tooling:
 
-* [Recommended for Linux] `maven-17`: A maven 3 Linux container with JDK17
-* [Recommended for Windows] `maven-17-windows`: A maven 3 Windows container with JDK17
+* [Recommended for Linux] `maven-21`: A maven 3 Linux container with JDK21
+* [Recommended for Windows] `maven-21-windows`: A maven 3 Windows container with JDK21
 * [Recommended for non-Java Linux] `node`, `ruby`, `webbuilder`: A NodeJS + NPM + Ruby (3) Linux container (with ASDF available)
 * [Recommended for Docker Linux containers] `docker && linux-amd64`
 
@@ -34,7 +34,8 @@ These labels are defining requests for agent by specifying required tooling:
 * `maven-8-windows`: A maven 3 Windows container with JDK8
 * `maven-11`: A maven 3 Linux container with JDK11
 * `maven-11-windows`: A maven 3 Windows container with JDK11
-* `maven-21`: A maven 3 Linux container with JDK21
+* `maven-17`: A maven 3 Linux container with JDK17
+* `maven-17-windows`: A maven 3 Windows container with JDK17
 * `maven-21-windows`: A maven 3 Windows container with JDK21
 * `maven-21`: A maven 3 Linux container with JDK21
 
@@ -132,7 +133,7 @@ buildPlugin(
   useContainerAgent: true, // Set to `false` if you need to use Docker for containerized tests
   useArtifactCachingProxy: false,
   configurations: [
-    [platform: 'linux', jdk: 17],
-    [platform: 'windows', jdk: 11],
+    [platform: 'linux', jdk: 21],
+    [platform: 'windows', jdk: 17],
 ])
 ----
