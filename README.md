@@ -1,6 +1,6 @@
 # Documentation
 
-This repository's purpose is to keep track of the knowledge around the Jenkins infrastructure project.
+The purpose of this repository is to keep track of the knowledge around the Jenkins infrastructure project.
 It gathers information for the following areas:
 
 * "Maintenance" section contains document used to prepare service maintenances like systems upgrade.
