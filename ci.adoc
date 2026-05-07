@@ -96,8 +96,7 @@ The following Jenkins tool installers are provided:
 * `jdk11` A recent OpenJDK 11 version from link:https://github.com/adoptium/[java adoptium]
 * `jdk17` A recent OpenJDK 17 version from link:https://github.com/adoptium/[java adoptium]
 * `jdk21` A recent OpenJDK 21 version from link:https://github.com/adoptium/[java adoptium]
-* `jdk25` A early access OpenJDK 25 version from link:https://github.com/adoptium/[java adoptium]
-* `mvn` A recent Maven 3.x version
+* `jdk25` A recent OpenJDK 25 version from link:https://github.com/adoptium/[java adoptium]
 * `groovy` A recent Groovy 2.x version
 
 > [!NOTE]
